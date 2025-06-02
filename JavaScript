@@ -1,0 +1,77 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // DOM Elements
+    const loginBtn = document.getElementById('loginBtn');
+    const registerBtn = document.getElementById('registerBtn');
+    const startTradingBtn = document.getElementById('startTradingBtn');
+    const exchangeCards = document.querySelectorAll('.exchange-card');
+    
+    // Sample exchange data - replace with your actual data
+    const sampleExchangeData = [
+        {
+            id: 1,
+            from: 'PayPal USD',
+            to: 'Bank Transfer',
+            amount: 250,
+            rate: '1 USD = 105 BDT',
+            user: 'JohnDoe',
+            time: '5 min ago',
+            verified: true
+        },
+        // Add more sample data as needed
+    ];
+    
+    // Event Listeners
+    loginBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Login functionality will be implemented soon!');
+        // Replace with actual login modal or redirect
+    });
+    
+    registerBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Registration functionality will be implemented soon!');
+        // Replace with actual registration modal or redirect
+    });
+    
+    startTradingBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Smooth scroll to exchange ads section
+        document.querySelector('#exchange-ads').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+    
+    // Add hover effects to exchange cards
+    exchangeCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.classList.add('shadow-lg');
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.classList.remove('shadow-lg');
+        });
+    });
+    
+    // Sample function to load exchange data
+    function loadExchangeData() {
+        // In a real app, you would fetch this from your API
+        console.log('Loading exchange data:', sampleExchangeData);
+        // You would then dynamically create the exchange cards
+    }
+    
+    // Initialize functions
+    loadExchangeData();
+    
+    // Dark mode toggle - uncomment if you want dark mode
+    /*
+    const darkModeToggle = document.createElement('button');
+    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    darkModeToggle.className = 'btn btn-outline-secondary position-fixed bottom-0 end-0 m-3';
+    darkModeToggle.onclick = function() {
+        document.body.classList.toggle('dark-mode');
+        this.innerHTML = document.body.classList.contains('dark-mode') ? 
+            '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    };
+    document.body.appendChild(darkModeToggle);
+    */
+});
